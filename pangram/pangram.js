@@ -6,8 +6,6 @@ module.exports = class {
   }
 
   isPangram() {
-    return this.sentence.length > 0 && letters.filter((char) => {
-      return this.sentence.indexOf(char) === -1
-    }).length < 1
+    return letters.filter((char) => this.sentence.indexOf(char) === -1).length < 1
   }
 }
