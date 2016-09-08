@@ -19,13 +19,6 @@ module.exports = class {
 
   kind() {
     if (this.hasBadLength() || this.violatesEquality()) throw Error()
-    switch (this.sidesSame()) {
-      case 3:
-        return 'equilateral'
-      case 2:
-        return 'isosceles'
-      default:
-        return 'scalene'
-    }
+    return ['error', 'scalene', 'isosceles', 'equilateral'][this.sidesSame()]
   }
 }
